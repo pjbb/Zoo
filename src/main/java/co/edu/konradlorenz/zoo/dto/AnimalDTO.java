@@ -1,6 +1,10 @@
-package co.edu.konrad.zoo.dto;
+package co.edu.konradlorenz.zoo.dto;
 
-import co.edu.konrad.marketplace.entities.AnimalEntity;
+
+import co.edu.konradlorenz.zoo.entities.AnimalEntity;
+import co.edu.konradlorenz.zoo.entities.EvaluacionEntity;
+import co.edu.konradlorenz.zoo.entities.PersonaEntity;
+import co.edu.konradlorenz.zoo.entities.TipoAnimalEntity;
 
 /**
  * DTO Animal
@@ -71,7 +75,7 @@ public class AnimalDTO {
      * @return AnimalEntity
      */
     public AnimalEntity toEntity(){
-        AnimalEntity animalEntity = new animalEntity();
+        AnimalEntity animalEntity = new AnimalEntity();
         animalEntity.setId(this.idAnimal);
         animalEntity.setEvaluacion(this.evaluacion);
         animalEntity.setCuidador(this.cuidador);
@@ -115,7 +119,7 @@ public class AnimalDTO {
     }
 
     public String getEspecie() {
-        return especie
+        return especie;
     }
 
     /**
