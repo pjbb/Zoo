@@ -1,0 +1,43 @@
+#BarraNav{
+    height: 12%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: crimson;
+}
+
+#Titulo{
+    padding-left: 40px;
+    font-family: impact;
+    font-size: 60px;
+}
+
+td, tr{
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 5px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 23px;
+}
+
+#Nav{
+    height: 45%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: darkred;
+    color: white;
+}
+
+#Separ{
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
