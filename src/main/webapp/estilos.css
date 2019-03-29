@@ -1,17 +1,12 @@
-#BarraNav{
-    height: 12%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: crimson;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-#Titulo{
-    padding-left: 40px;
-    font-family: impact;
-    font-size: 60px;
+body{
+    background-color: whitesmoke;
 }
+
 
 td, tr{
     padding-right: 25px;
@@ -37,7 +32,48 @@ td, tr{
     border-right-width: 1px;
 }
 
-body{
-    background-color: whitesmoke;
+#BarraNav{
+    height: 12%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: crimson;
+    z-index: 100;
 }
 
+#Titulo{
+    padding-left: 40px;
+    font-family: impact;
+    font-size: 60px;
+    color: white;
+}
+
+#imagen {
+   width: 1400px;
+   height: 400px;
+}
+
+.topnav {
+  background-color: darkred;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #AA3333;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #722B2B;
+  color: white;
+}

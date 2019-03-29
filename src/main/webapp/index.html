@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Zoo</title>
@@ -10,16 +11,14 @@
         <link rel="stylesheet" type="text/css" href="Estilos.css">
     </head>
     <body>
-        <div id="BarraNav" style="position: fixed; top: 0;">
-            <a id="Titulo" style="color: white;">Zoológico CJMB</a>
-            <div id="Nav">
-                <table align="right">
-                    <tr>
-                        <td>¿Quiénes somos?</td>
-                        <td id="Separ">Shows</td>
-                        <td>Animales</td>
-                    </tr>
-                </table>
+        <div id="BarraNav">
+            <a id="Titulo">Zoológico CJMB</a>
+
+            <div class="topnav">
+              <a class="active" href="#">Home</a>
+              <a href="#">Animales</a>
+              <a href="#">Shows</a>
+              <a href="#">¿Quienes somos?</a>
             </div>
         </div>
     <center>
@@ -34,15 +33,15 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" style="">
                 <div class="item active">
-                    <img src="zoo.jpg" alt="Animales Salvajes" style=" width: 1400px; height: 400px">
+                    <img id="imagen" src="zoo.jpg" alt="Animales Salvajes">
                 </div>
 
                 <div class="item">
-                    <img src="zoo2.jpg" alt="Elefantes" style="width: 1400px; height: 400px">
+                    <img id="imagen" src="zoo2.jpg" alt="Elefantes">
                 </div>
 
                 <div class="item">
-                    <img src="zoo3.jpg" alt="New York" style="width: 1400px; height: 400px">
+                    <img id="imagen" src="zoo3.jpg" alt="New York">
                 </div>
             </div>
 
