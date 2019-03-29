@@ -6,6 +6,8 @@
 package co.edu.konradlorenz.zoo.dto;
 
 import co.edu.konradlorenz.zoo.entities.EvaluacionEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * DTO evaluacion
@@ -34,14 +36,14 @@ public class EvaluacionDTO {
         
     }
 
-    public EvaluacionDTO(Long idEvaluacion, int valor, String observacion) {
-        this.idEvaluacion = idEvaluacion;
-        this.valor = valor;
-        this.observacion = observacion;
+    public EvaluacionDTO(EvaluacionEntity evaluacion) {
+        this.idEvaluacion = evaluacion.getId();
+        this.valor = evaluacion.getValor();
+        this.observacion = evaluacion.getObservacion();
     }
     
     /**
-     * Convertitod DTO - Entity
+     * Conversión DTO - Entity
      * @return EvaluacionEntity
      */
     public EvaluacionEntity toEntity(){
@@ -49,10 +51,22 @@ public class EvaluacionDTO {
         evaluacionEntity.setId(this.idEvaluacion);
         evaluacionEntity.setValor(this.valor);
         evaluacionEntity.setObservacion(this.observacion);
-        
         return evaluacionEntity;
     }
 
+    /**
+      * Método para conversión de lista DTO a lista Entidades
+      * @param evaluacionList
+      * @return 
+      */
+    public static List<EvaluacionDTO> toEvaluacionList(List<EvaluacionEntity> evaluacionList){
+        List<EvaluacionDTO> listaEvaluaciones = new ArrayList<>();
+        for (int i = 0; i < evaluacionList.size(); i++) {
+            listaEvaluaciones.add(new EvaluacionDTO(evaluacionList.get(i)));
+        }
+        return listaEvaluaciones;
+    }
+    
     /**
      * Getters
      */

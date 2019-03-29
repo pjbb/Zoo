@@ -5,6 +5,8 @@ import co.edu.konradlorenz.zoo.entities.AnimalEntity;
 import co.edu.konradlorenz.zoo.entities.EvaluacionEntity;
 import co.edu.konradlorenz.zoo.entities.PersonaEntity;
 import co.edu.konradlorenz.zoo.entities.TipoAnimalEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * DTO Animal
@@ -85,6 +87,19 @@ public class AnimalDTO {
         animalEntity.setDescripcion(this.descripcion);
         animalEntity.setEspecie(this.especie);
         return animalEntity;
+    }
+    
+    /**
+      * Método para conversión de lista DTO a lista Entidades
+      * @param animalList
+      * @return 
+      */
+    public static List<AnimalDTO> toAnimalList(List<AnimalEntity> animalList){
+        List<AnimalDTO> listaAnimales = new ArrayList<>();
+        for (int i = 0; i < animalList.size(); i++) {
+            listaAnimales.add(new AnimalDTO(animalList.get(i)));
+        }
+        return listaAnimales;
     }
     
     /**

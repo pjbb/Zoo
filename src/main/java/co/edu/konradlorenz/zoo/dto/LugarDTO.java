@@ -6,6 +6,8 @@
 package co.edu.konradlorenz.zoo.dto;
 
 import co.edu.konradlorenz.zoo.entities.LugarEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * DTO lugar
@@ -29,9 +31,22 @@ public class LugarDTO {
         
     }
 
-    public LugarDTO(Long idLugar, String nombreLugar) {
-        this.idLugar = idLugar;
-        this.nombreLugar = nombreLugar;
+    public LugarDTO(LugarEntity lugar) {
+        this.idLugar = lugar.getId();
+        this.nombreLugar = lugar.getNombre();
+    }
+    
+    /**
+      * Método para conversión de lista DTO a lista Entidades
+      * @param lugarList
+      * @return 
+      */
+    public static List<LugarDTO> toLugarList(List<LugarEntity> lugarList){
+        List<LugarDTO> listaLugares = new ArrayList<>();
+        for (int i = 0; i < lugarList.size(); i++) {
+            listaLugares.add(new LugarDTO(lugarList.get(i)));
+        }
+        return listaLugares;
     }
     
     /**

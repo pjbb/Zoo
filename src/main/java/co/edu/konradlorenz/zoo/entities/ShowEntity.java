@@ -63,7 +63,7 @@ public class ShowEntity implements Serializable{
     @Id
     @JoinColumn(name = "evaluacion")
     @ManyToOne
-    private EvaluacionEntity evaluacio;
+    private EvaluacionEntity evaluacion;
     
     /**
      * Atributo Nombre
@@ -101,7 +101,7 @@ public class ShowEntity implements Serializable{
     }
 
     public EvaluacionEntity getEvaluacio() {
-        return evaluacio;
+        return evaluacion;
     }
 
     /**
@@ -132,7 +132,7 @@ public class ShowEntity implements Serializable{
     }
 
     public void setEvaluacio(EvaluacionEntity evaluacio) {
-        this.evaluacio = evaluacio;
+        this.evaluacion = evaluacio;
     }
 
     public void setNombreShow(String nombreShow) {

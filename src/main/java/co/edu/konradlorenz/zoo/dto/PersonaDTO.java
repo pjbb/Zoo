@@ -5,6 +5,8 @@ import co.edu.konradlorenz.zoo.entities.LugarEntity;
 import co.edu.konradlorenz.zoo.entities.PersonaEntity;
 import co.edu.konradlorenz.zoo.entities.TipoDocumentoEntity;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 
 /**
@@ -49,13 +51,13 @@ public class PersonaDTO {
         
     }
 
-    public PersonaDTO(Long numeroDocumento, CargoEntity cargo, TipoDocumentoEntity tipoDocumento, String nombre, Date fechaNaicimiento, String telefono) {
-        this.numeroDocumento = numeroDocumento;
-        this.cargo = cargo;
-        this.tipoDocumento = tipoDocumento;
-        this.nombre = nombre;
-        this.fechaNacimiento = fechaNaicimiento;
-        this.telefono = telefono;
+    public PersonaDTO(PersonaEntity persona) {
+        this.numeroDocumento = persona.getNumeroDocumento();
+        this.cargo = persona.getCargo();
+        this.tipoDocumento = persona.getTipoDocumento();
+        this.nombre = persona.getNombre();
+        this.fechaNacimiento = persona.getFechaNacimiento();
+        this.telefono = persona.getTelefono();
     }
     
     /**
@@ -67,6 +69,19 @@ public class PersonaDTO {
         personaEntity.setId(this.numeroDocumento);
         personaEntity.setNombre(this.nombre);
         return personaEntity;
+    }
+    
+    /**
+      * Método para conversión de lista DTO a lista Entidades
+      * @param personaList
+      * @return 
+      */
+    public static List<PersonaDTO> toPersonaList(List<PersonaEntity> personaList){
+        List<PersonaDTO> listaProductos = new ArrayList<>();
+        for (int i = 0; i < personaList.size(); i++) {
+            listaProductos.add(new PersonaDTO(personaList.get(i)));
+        }
+        return listaProductos;
     }
 
     /**

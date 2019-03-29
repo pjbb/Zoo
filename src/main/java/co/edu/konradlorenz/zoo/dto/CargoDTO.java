@@ -6,6 +6,8 @@
 package co.edu.konradlorenz.zoo.dto;
 
 import co.edu.konradlorenz.zoo.entities.CargoEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -29,9 +31,9 @@ public class CargoDTO {
         
     }
 
-    public CargoDTO(Long idCargo, String nombreCargo) {
-        this.idCargo = idCargo;
-        this.nombreCargo = nombreCargo;
+    public CargoDTO(CargoEntity cargo) {
+        this.idCargo = cargo.getId();
+        this.nombreCargo = cargo.getNombre();
     }
     
     public CargoEntity toEntity(){
@@ -40,6 +42,19 @@ public class CargoDTO {
         cargoEntity.setNombre(this.nombreCargo);
         
         return cargoEntity;
+    }
+    
+    /**
+      * Método para conversión de lista DTO a lista Entidades
+      * @param cargoList
+      * @return 
+      */
+    public static List<CargoDTO> toCargoList(List<CargoEntity> cargoList){
+        List<CargoDTO> listaCargos = new ArrayList<>();
+        for (int i = 0; i < cargoList.size(); i++) {
+            listaCargos.add(new CargoDTO(cargoList.get(i)));
+        }
+        return listaCargos;
     }
 
     /**

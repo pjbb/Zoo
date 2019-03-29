@@ -7,6 +7,8 @@ package co.edu.konradlorenz.zoo.dto;
 
 import co.edu.konradlorenz.zoo.entities.HorarioAlimentacionEntity;
 import java.sql.Time;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * DTO Horario Alimentacion
@@ -35,11 +37,25 @@ public class HorarioAlimentacionDTO {
         
     }
 
-    public HorarioAlimentacionDTO(Long idHorarioAlimentacion, Time horaInicio, Time horaFinal) {
-        this.idHorarioAlimentacion = idHorarioAlimentacion;
-        this.horaInicio = horaInicio;
-        this.horaFinal = horaFinal;
+    public HorarioAlimentacionDTO(HorarioAlimentacionEntity horarioAlimentacion) {
+        this.idHorarioAlimentacion = horarioAlimentacion.getId();
+        this.horaInicio = horarioAlimentacion.getHoraInicio();
+        this.horaFinal = horarioAlimentacion.getHorarioFinal();
     }
+    
+    /**
+      * Método para conversión de lista DTO a lista Entidades
+      * @param horarioAlimentacionList
+      * @return 
+      */
+    public static List<HorarioAlimentacionDTO> toHorarioAlimentacionList(List<HorarioAlimentacionEntity> horarioAlimentacionList){
+        List<HorarioAlimentacionDTO> listaHorariosAlimentacion = new ArrayList<>();
+        for (int i = 0; i < horarioAlimentacionList.size(); i++) {
+            listaHorariosAlimentacion.add(new HorarioAlimentacionDTO(horarioAlimentacionList.get(i)));
+        }
+        return listaHorariosAlimentacion;
+    }
+    
     
     /**
      * Conversion DTO - Entity
