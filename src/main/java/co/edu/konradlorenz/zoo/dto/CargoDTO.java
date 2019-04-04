@@ -36,6 +36,10 @@ public class CargoDTO {
         this.nombreCargo = cargo.getNombre();
     }
     
+    /**
+     * Conversio DTO -Entity
+     * @return cargoEntity
+     */
     public CargoEntity toEntity(){
         CargoEntity cargoEntity = new CargoEntity();
         cargoEntity.setId(this.idCargo);

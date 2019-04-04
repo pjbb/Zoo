@@ -62,12 +62,17 @@ public class PersonaDTO {
     
     /**
      * Coversion DTO - Entity
-     * @return LugarEntity
+     * @return PersonaEntity
      */
     public PersonaEntity toEntity(){
         PersonaEntity personaEntity = new PersonaEntity();
         personaEntity.setId(this.numeroDocumento);
         personaEntity.setNombre(this.nombre);
+        personaEntity.setCargo(this.cargo);
+        personaEntity.setTipoDocumento(this.tipoDocumento);
+        personaEntity.setFechaNacimiento(this.fechaNacimiento);
+        personaEntity.setTelefono(this.telefono);
+        
         return personaEntity;
     }
     
@@ -111,8 +116,6 @@ public class PersonaDTO {
         return telefono;
     }
     
-    
-
     /**
      * Setters
      */
@@ -139,7 +142,5 @@ public class PersonaDTO {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    
 }
 
