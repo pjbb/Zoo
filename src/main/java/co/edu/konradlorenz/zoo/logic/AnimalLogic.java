@@ -39,7 +39,7 @@ public class AnimalLogic {
         AnimalEntity animal = persistence.find(id);
         
         if(animal == null){
-            throw new IllegalArgumentException("El animal solicitado no existe");
+            throw new IllegalArgumentException("El animal solicitado no existe.");
         }
         
         return animal;
@@ -59,7 +59,7 @@ public class AnimalLogic {
      * Metodo para actualizar un Animal
      * @param entity
      * @param id
-     * @return Anial Actualizado
+     * @return Animal Actualizado
      */
     public AnimalEntity actualizarAnimal(AnimalEntity entity, Long id){
         AnimalEntity animal = persistence.update(entity);
