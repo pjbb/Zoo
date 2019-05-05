@@ -35,7 +35,7 @@ public class EvaluacionResource {
     @GET
     public List<EvaluacionDTO> getEvaluacionList(){
         List <EvaluacionEntity> ev =  evLogic.obtenerEvaluacion();
-        return EvaluacionDTO.toEvalaucionList(ev);
+        return EvaluacionDTO.toEvaluacionList(ev);
     }
     
     /**

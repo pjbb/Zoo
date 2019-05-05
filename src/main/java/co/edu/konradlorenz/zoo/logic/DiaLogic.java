@@ -60,7 +60,7 @@ public class DiaLogic {
      * @param entity
      * @return Dia actualizado
      */
-    public DiaEntity actuatlizarDia(DiaEntity entity, Long id){
+    public DiaEntity actualizarDia(DiaEntity entity, Long id){
         DiaEntity dia = persistence.update(entity);
         return dia;        
     }

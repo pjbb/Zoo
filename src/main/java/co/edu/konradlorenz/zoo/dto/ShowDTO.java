@@ -88,7 +88,7 @@ public class ShowDTO {
       * @param showList
       * @return 
       */
-    public static List<ShowDTO> toShowsList(List<ShowEntity> showList){
+    public static List<ShowDTO> toShowList(List<ShowEntity> showList){
         List<ShowDTO> listaShows = new ArrayList<>();
         for (int i = 0; i < showList.size(); i++) {
             listaShows.add(new ShowDTO(showList.get(i)));
