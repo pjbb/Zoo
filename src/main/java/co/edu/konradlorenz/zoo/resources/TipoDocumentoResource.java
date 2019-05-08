@@ -46,7 +46,7 @@ public class TipoDocumentoResource {
     @GET
     @Path("{id: \\d+}")
     public TipoDocumentoDTO getTipoDocumento(@PathParam("id") Long id){
-        TipoDocumentoEntity tipoDocumento = TipoDocumentoLogic.obtenerTipoDocumentoPorId(id);
+        TipoDocumentoEntity tipoDocumento = tipoDocumentoLogic.obtenerTipoDocumentoPorId(id);
         if (tipoDocumento == null){
             throw new RuntimeException("El tipo de documento no existe");
         } 
@@ -55,7 +55,7 @@ public class TipoDocumentoResource {
     
     @POST
     public TipoDocumentoDTO createTipoDocumento(TipoDocumentoDTO tipoDocumentoDTO){
-        return new TipoDocumentoDTO(TipoDocumentoLogic.crearTipoDocumento(tipoDocumentoDTO.toEntity()));
+        return new TipoDocumentoDTO(tipoDocumentoLogic.crearTipoDocumento(tipoDocumentoDTO.toEntity()));
     }
     
     
@@ -72,7 +72,7 @@ public class TipoDocumentoResource {
         if(tipoDocumentoEntity == null){
             throw new RuntimeException("El tipo de documento no existe.");
         }
-        return new TipoDocumentoDTO(TipoDocumentoLogic.actualizarTipoDocumento(tipoDocumentoDTO.toEntity(), id));
+        return new TipoDocumentoDTO(tipoDocumentoLogic.actualizarTipoDocumento(tipoDocumentoDTO.toEntity(), id));
     }
     
     @DELETE
