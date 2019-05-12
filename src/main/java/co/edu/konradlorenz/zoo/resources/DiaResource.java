@@ -1,11 +1,8 @@
 package co.edu.konradlorenz.zoo.resources;
 
 
-import co.edu.konradlorenz.zoo.dto.CargoDTO;
 import co.edu.konradlorenz.zoo.dto.DiaDTO;
-import co.edu.konradlorenz.zoo.entities.CargoEntity;
 import co.edu.konradlorenz.zoo.entities.DiaEntity;
-import co.edu.konradlorenz.zoo.logic.CargoLogic;
 import co.edu.konradlorenz.zoo.logic.DiaLogic;
 import java.util.List;
 import javax.ejb.EJB;

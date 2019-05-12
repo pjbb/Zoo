@@ -20,7 +20,7 @@ public class PersonaLogic {
      * Metodo para obtener lista de las personas
      * @return ListLugar
      */
-    public List<PersonaEntity> obtenerLugar(){
+    public List<PersonaEntity> obtenerPersona(){
         List<PersonaEntity> persona = persistence.findall();
         return persona;
     }
