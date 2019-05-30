@@ -33,6 +33,7 @@ public class HorarioAlimentacionResource {
      * @return Lista HorarioAlimentacionDTO
      */
     @GET
+    @Consumes
     public List<HorarioAlimentacionDTO> getHorarioAlimentacionList(){
         List <HorarioAlimentacionEntity> horarioAlimentacion =  horarioAlimentacionLogic.obtenerHorarioAlimentacion();
         return HorarioAlimentacionDTO.toHorarioAlimentacionList(horarioAlimentacion);

@@ -33,6 +33,7 @@ public class AnimalResource {
      * @return Lista AnimalDTO
      */
     @GET
+    @Consumes
     public List<AnimalDTO> getAnimalList(){
         List <AnimalEntity> animal = animalLogic.obtenerAnimal();
         return AnimalDTO.toAnimalList(animal);

@@ -30,21 +30,19 @@ public class ShowEntity implements Serializable{
      * Atributo Animal
      */
     @JoinColumn(name = "animal")
-    @ManyToMany
+    @ManyToOne
     private AnimalEntity idAnimal;
     
     /**
      * Atributo Horario
      */
-    @Id
     @JoinColumn(name = "horario")
-    @OneToMany
+    @ManyToOne
     private HorarioEntity horario;
     
     /**
      * Artibuto Lugar
      */
-    @Id
     @JoinColumn(name = "lugar")
     @ManyToOne
     private LugarEntity lugar;
@@ -52,7 +50,6 @@ public class ShowEntity implements Serializable{
     /**
      * Atributo Encargado
      */
-    @Id
     @JoinColumn(name = "numero_documento_encargado")
     @ManyToOne
     private PersonaEntity encargado;

@@ -28,7 +28,6 @@ public class HorarioEntity implements Serializable{
     /**
      * Atributo dia
      */
-    @Id
     @JoinColumn(name = "dia")
     @ManyToOne
     private DiaEntity dia;
@@ -36,7 +35,6 @@ public class HorarioEntity implements Serializable{
     /**
      * Atributo hora
      */
-    @Id
     @Column(name = "hora")
     private Time hora;
     

@@ -33,6 +33,7 @@ public class DiaResource {
      * @return Lista DiaDTO
      */
     @GET
+    @Consumes
     public List<DiaDTO> getDiaList(){
         List <DiaEntity> dia =  diaLogic.obtenerDia();
         return DiaDTO.toDiaList(dia);

@@ -29,7 +29,7 @@ public class AnimalEntity implements Serializable{
      * Atributo evaluacion
      */
     @JoinColumn(name = "evaluacion")
-    @OneToMany
+    @ManyToOne
     private EvaluacionEntity evaluacion;
     
     /**
